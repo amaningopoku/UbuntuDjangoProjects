@@ -1,0 +1,20 @@
+{%extends 'base.html'%}
+{%block content%}
+<div class="container">
+    <h1 class="px-2 text-primary  ">Book Details</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-6 col-sm-4"><label for="" class="fw-bold px-2">Book Title: </label>{{details.title}}</div>
+            <div class="col-6 col-sm-4"><label for="" class="fw-bold px-2">Author: </label>{{details.author}}</div>
+
+            <!-- Force next columns to break to new line at md breakpoint and up -->
+            <div class="w-100 d-none d-md-block"></div>
+
+            <div class="col-6 col-sm-4"><label for="" class="fw-bold px-2">Number of Pages: </label>{{details.pages}}
+            </div>
+            <div class="col-6 col-sm-4"><label for="" class="fw-bold px-2">Date Created:</label>{{details.date_created}}</div>
+        </div>
+        <div class="col-6 col-sm-4"><img src="{{picture.img.url}}" alt="" height="500px"></div>
+    </div>
+</div>
+{%endblock%}

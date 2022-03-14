@@ -1,0 +1,30 @@
+{%extends 'base.html'%}
+{%block content%} 
+<div class="container">
+    <h1>User Information App</h1>
+    <table class="table table-hover table-bordered">
+        <thead class="bg-primary text-light">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Username</th>
+            <th scope="col">Full Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Date Added</th>
+            <th scope="col">Details</th>
+          </tr>
+        </thead>
+        <tbody>
+            {%for person in user_data%}
+          <tr>
+            <th scope="row">{{forloop.counter}}</th>
+            <td>{{person.username}}</td>
+            <td>{{person.first_name}} {{person.last_name}}</td>
+            <td>{{person.email}}</td>
+            <td>{{person.date_created}}</td>
+            <td><a href="{% url 'userinfoapp:user_details' user_id=person.id %}">Details</a></td>
+          </tr>
+          {%endfor%}
+        </tbody>
+      </table>
+</div>
+{%endblock%}
